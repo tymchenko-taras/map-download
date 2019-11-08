@@ -35,7 +35,7 @@
 			$t = microtime(1);
 			
 			$result = download(
-				'http://tiles.mapire.eu/secondsurvey/galicia_g.jp2/13/'. $x .'/'.$y,
+				'http://mapsite/secondsurvey/galicia_g.jp2/13/'. $x .'/'.$y,
 				$headers
 			);
 			
