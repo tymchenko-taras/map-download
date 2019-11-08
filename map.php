@@ -7,8 +7,7 @@
 		'Accept-Language' => 'en-US,en;q=0.5',
 		'Cache-Control' => 'no-cache',
 		'Connection' => 'keep-alive',
-		'Cookie' => '__utma=233535106.1419915839.1417158987.1417163131.1417173688.3; __utmz=233535106.1417158987.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmc=233535106',
-		'Host' => 'tiles.mapire.eu',
+		//'Host' => insert here,
 		'Pragma' => 'no-cache',
 		'User-Agent' => 'Mozilla/5.0 (Windows; I; Windows NT 5.1; ru; rv:1.9.2.13) Gecko/20100101 Firefox/4.0 /api-debug',
 	);
@@ -35,14 +34,14 @@
 			$t = microtime(1);
 			
 			$result = download(
-				'http://mapsite/secondsurvey/galicia_g.jp2/13/'. $x .'/'.$y,
+				'http://mapsite/path/to/file/'. $x .'/'.$y,
 				$headers
 			);
 			
 			echo 'time '. (microtime(1) - $t). PHP_EOL;
 			if( $result ){
 
-				file_put_contents('D:\documents\historical_ostriv2/'.$x.'x'.$y.'.jpg', $result);
+				file_put_contents('result/'.$x.'x'.$y.'.jpg', $result);
 				
 
 			} else {
@@ -54,5 +53,5 @@
 // 	merge downloaded images using graphicsmagick
 //	for /l %%x in (450, 1, 550) do (
 //   echo %%x
-//   gm convert -append %%x*.jpg d:\documents\history\%%x.jpg
+//   gm convert -append %%x*.jpg merged\%%x.jpg
 //)
